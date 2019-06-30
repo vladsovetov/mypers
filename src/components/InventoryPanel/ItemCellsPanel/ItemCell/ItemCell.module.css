@@ -1,0 +1,116 @@
+.item-cell {
+    display: flex;
+    height: 48px;
+    width: 48px;
+    border: 1px solid #9a906c;
+    background-image: url(../../../../static/interface/item-cells.png);
+    background-size: 600%;
+}
+
+.item-cell-hidden {
+    visibility: hidden;
+}
+
+.item-cell-helmet {
+    background-position: 0 0;
+}
+.item-cell-armor {
+    background-position: -48px 0;
+}
+.item-cell-pants {
+    background-position: -96px 0;
+}
+.item-cell-shoes {
+    background-position: -144px 0;
+}
+.item-cell-weapon {
+    background-position: -192px 0;
+}
+.item-cell-invent {
+    background-position: -240px 0;
+}
+.item-cell-necklace {
+    background-position: 0 -48px;
+}
+.item-cell-cape {
+    background-position: -48px -48px;
+}
+.item-cell-gloves {
+    background-position: -96px -48px;
+}
+.item-cell-belt {
+    background-position: -144px -48px;
+}
+.item-cell-ammo {
+    background-position: -192px -48px;
+}
+.item-cell-trinket {
+    background-position: -240px -48px;
+}
+.item-cell-left-ring {
+    background-position: 0 -96px;
+}
+.item-cell-right-ring {
+    background-position: -48px -96px;
+}
+.item-cell-book {
+    background-position: -96px -96px;
+}
+.item-cell-bag {
+    background-position: -144px -96px;
+}
+.item-cell-fairy {
+    background-position: -192px -96px;
+}
+.item-cell-skill {
+    background-position: -240px -96px;
+}
+
+/* fairy wear */
+.item-cell-orb {
+    background-position: 0 -144px;
+}
+.item-cell-orb {
+    background-position: -48px -144px;
+}
+.item-cell-orb {
+    background-position: -96px -144px;
+}
+.item-cell-orb {
+    background-position: -144px -144px;
+}
+.item-cell-fairy-skill {
+    background-position: -192px -144px;
+}
+
+.item-cell-fly {
+    background-position: -240px -144px;
+}
+
+/* cards */
+.item-cell-destroyer {
+    background-position: 0 -192px;
+}
+.item-cell-battle {
+    background-position: -48px -192px;
+}
+.item-cell-longevity {
+    background-position: -96px -192px;
+}
+.item-cell-durability {
+    background-position: -144px -192px;
+}
+.item-cell-soulprime {
+    background-position: -192px -192px;
+}
+.item-cell-lifeprime {
+    background-position: -240px -192px;
+}
+
+.item-cell-star {
+    background-position: 0 -240px;
+}
+
+.item-cell-glyph {
+    background-position: 0 -240px;
+}

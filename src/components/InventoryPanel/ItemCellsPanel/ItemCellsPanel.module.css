@@ -1,0 +1,13 @@
+.item-cells-panel {
+    display: flex;
+}
+.cells-subpanel {
+    display: flex;
+    flex: 1 1 30%;
+    justify-content: space-around;
+}
+
+.cells-column {
+    display: flex;
+    flex-direction: column;
+}
