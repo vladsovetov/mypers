@@ -1,7 +1,7 @@
 .meridian-button {
     width: 100%;
     height: 160px;
-    background-image: url(../../../static/interface/invent-pers.png);
+    background-image: url(../../static/interface/invent-pers.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

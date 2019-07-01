@@ -3,7 +3,7 @@
     height: 48px;
     width: 48px;
     border: 1px solid #9a906c;
-    background-image: url(../../../../static/interface/item-cells.png);
+    background-image: url(../../static/interface/item-cells.png);
     background-size: 600%;
 }
 

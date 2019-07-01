@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './ItemCellsPanel.module.css';
-import ItemCell from './ItemCell/ItemCell';
+import ItemCell from '../ItemCell/ItemCell';
 
 const ItemCellsPanel = () => {
     return (
