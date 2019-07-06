@@ -1,0 +1,17 @@
+.inventory-panel {
+    width: 100%;
+    max-width: 368px;
+    box-sizing: border-box;
+    background-color: #1f2d3a;
+    padding: 24px 2px;
+}
+
+.inventory-panel-inner {
+    padding: 8px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #b5aa7d;
+    display: flex;
+    flex-direction: column;
+}
