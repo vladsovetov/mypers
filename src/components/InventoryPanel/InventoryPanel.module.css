@@ -1,6 +1,6 @@
 .inventory-panel {
     width: 100%;
-    height: 100%;
+    max-width: 368px;
     box-sizing: border-box;
     background-color: #1f2d3a;
     padding: 24px 2px;

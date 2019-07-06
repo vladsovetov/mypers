@@ -4,6 +4,7 @@ import styles from './InventoryPanel.module.css';
 import ItemCellsPanel from '../ItemCellsPanel/ItemCellsPanel';
 import MeridianButton from '../MeridianButton/MeridianButton';
 import CardCellsPanel from '../CardCellsPanel/CardCellsPanel';
+import InventoryCellsPanel from '../InventoryCellsPanel/InventoryCellsPanel';
 
 const InventoryPanel = () => {
     return (
@@ -12,6 +13,7 @@ const InventoryPanel = () => {
                 <ItemCellsPanel />
                 <MeridianButton />
                 <CardCellsPanel />
+                <InventoryCellsPanel />
             </div>
         </div>
     );

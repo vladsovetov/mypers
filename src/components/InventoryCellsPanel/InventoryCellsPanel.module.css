@@ -1,0 +1,10 @@
+.inventory-cells-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.cells-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

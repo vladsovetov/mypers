@@ -1,5 +1,6 @@
 import React from 'react'
 
+import constants from '../../constants';
 import styles from './ItemCellsPanel.module.css';
 import ItemCell from '../ItemCell/ItemCell';
 
@@ -8,42 +9,42 @@ const ItemCellsPanel = () => {
         <div className={styles['item-cells-panel']}>
             <div className={styles['cells-subpanel']}>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="necklace"/>
-                    <ItemCell type="gloves"/>
-                    <ItemCell type="left-ring"/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.NECKLACE}/>
+                    <ItemCell type={constants.ITEM_TYPE.GLOVES}/>
+                    <ItemCell type={constants.ITEM_TYPE.LEFT_RING}/>
                 </div>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="cape"/>
-                    <ItemCell type="belt"/>
-                    <ItemCell type="right-ring"/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.CAPE}/>
+                    <ItemCell type={constants.ITEM_TYPE.BELT}/>
+                    <ItemCell type={constants.ITEM_TYPE.RIGHT_RING}/>
                 </div>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="fly"/>
-                    <ItemCell type="book"/>
-                    <ItemCell type="bag"/>
-                    <ItemCell type="fairy"/>
+                    <ItemCell type={constants.ITEM_TYPE.FLY}/>
+                    <ItemCell type={constants.ITEM_TYPE.BOOK}/>
+                    <ItemCell type={constants.ITEM_TYPE.BAG}/>
+                    <ItemCell type={constants.ITEM_TYPE.FAIRY}/>
                 </div>
             </div>
             <div className={styles['cells-subpanel']}>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="star"/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.STAR}/>
                 </div>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="helmet"/>
-                    <ItemCell type="armor"/>
-                    <ItemCell type="pants"/>
-                    <ItemCell type="shoes"/>
+                    <ItemCell type={constants.ITEM_TYPE.HELMET}/>
+                    <ItemCell type={constants.ITEM_TYPE.ARMOR}/>
+                    <ItemCell type={constants.ITEM_TYPE.PANTS}/>
+                    <ItemCell type={constants.ITEM_TYPE.SHOES}/>
                 </div>
                 <div className={styles['cells-column']}>
-                    <ItemCell type="hidden"/>
-                    <ItemCell type="trinket"/>
-                    <ItemCell type="weapon"/>
-                    <ItemCell type="ammo"/>
+                    <ItemCell type={constants.ITEM_TYPE.HIDDEN}/>
+                    <ItemCell type={constants.ITEM_TYPE.TRINKET}/>
+                    <ItemCell type={constants.ITEM_TYPE.WEAPON}/>
+                    <ItemCell type={constants.ITEM_TYPE.AMMO}/>
                 </div>
             </div>
         </div>
