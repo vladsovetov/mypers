@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+import TextField from '@material-ui/core/TextField';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import styles from './ItemSelector.module.css';
 
@@ -40,25 +42,30 @@ const ItemSelector = (props) => {
                             <CloseIcon />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            Refinement
+                            <FormattedMessage id="itemSelector.title"/>
                         </Typography>
                         <Button color="inherit" onClick={props.onClosed}>
-                            save
+                            <FormattedMessage id="itemSelector.save"/>
                         </Button>
                     </Toolbar>
                 </AppBar>
                 <List>
-                    <ListItem button>
-                        edit refine
+                    <ListItem>
+                    <TextField
+                        id="outlined-name"
+                        label={props.intl.formatMessage({id: 'itemSelector.nameLabel'})}
+                        className={classes.textField}
+                        // value={values.name}
+                        // onChange={handleChange('name')}
+                        margin="normal"
+                        variant="outlined"
+                    />
                     </ListItem>
                     <Divider />
-                    <ListItem button>
-                        edit gems
-                    </ListItem>
                 </List>
             </Dialog>
         </div>
     );
 };
 
-export default ItemSelector;
+export default injectIntl(ItemSelector);
