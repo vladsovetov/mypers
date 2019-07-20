@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect } from 'react'
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
@@ -12,7 +12,11 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import TextField from '@material-ui/core/TextField';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { connect } from 'react-redux';
+
+import { fetchItems } from '../../actions/items';
 
 import styles from './ItemSelector.module.css';
 
@@ -33,9 +37,17 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const ItemSelector = (props) => {
     const classes = useStyles();
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const { onInit, type, items } = props;
+    const itemType = type.toLowerCase();
+
+    useEffect(() => {
+        onInit(itemType.toLowerCase());
+    }, [onInit, itemType]);
     return (
         <div className={styles['items-selector']}>
-            <Dialog fullScreen open={props.open} onClose={props.onClosed} TransitionComponent={Transition}>
+            <Dialog fullScreen={fullScreen} open={true} onClose={props.onClosed} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>
                     <Toolbar>
                         <IconButton edge="start" color="inherit" onClick={props.onClosed} aria-label="Close">
@@ -62,10 +74,29 @@ const ItemSelector = (props) => {
                     />
                     </ListItem>
                     <Divider />
+                    {items && items[itemType] ? items[itemType].map((item) => {
+                        return <ListItem key={item.id}>
+                            {item.name}
+                        </ListItem>
+                    }) : null}
                 </List>
             </Dialog>
         </div>
     );
 };
 
-export default injectIntl(ItemSelector);
+const mapStateToProps = (state) => {
+    return {
+        items: state.itemsReducer
+    }
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onInit: (type) => {
+            dispatch(fetchItems(type));
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(ItemSelector));

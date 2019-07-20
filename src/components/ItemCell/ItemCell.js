@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './ItemCell.module.css';
 import constants from '../../constants';
-import ItemSelector from '../ItemSelector/ItemSelector';
+import ItemSelector from '../../containers/ItemSelector/ItemSelector';
 
 const ItemCell = (props) => {
     const type = props.type || constants.ITEM_TYPE.HIDDEN;
@@ -20,7 +20,7 @@ const ItemCell = (props) => {
     return (<>
         <div className={itemClasses}
             onClick={handleItemClick}></div>
-        <ItemSelector open={open} onClosed={handleClose}/>
+        {open ? <ItemSelector onClosed={handleClose} type={type} /> : null}
     </>);
 };
 

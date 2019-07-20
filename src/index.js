@@ -6,6 +6,10 @@ import localeEn from 'react-intl/locale-data/en';
 import messagesEn from "./i18n/en.json";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import reducers from './reducers';
+import thunk from 'redux-thunk';
 
 
 import './index.css';
@@ -36,10 +40,19 @@ const theme = createMuiTheme({
     },
 });
 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+    reducers,
+    composeEnhancer(applyMiddleware(thunk)),
+);
+
 ReactDOM.render(
     <ThemeProvider theme={theme}>
         <IntlProvider locale={language} messages={messages[language]}>
-            <App />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </IntlProvider>
     </ThemeProvider>,
     document.getElementById('root')
