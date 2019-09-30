@@ -4,11 +4,11 @@ import axios from 'axios';
 export const fetchItems = (type) => {
     return (dispatch) => {
         dispatch(fetchItemsProgress());
-        return axios.post(`http://localhost:3001/?source=items&type=${type}`)
+        return axios.get(`http://localhost:3001/api/items/${type}`)
             .then(response => {
                 dispatch(fetchItemsSuccess({
                     type: type,
-                    items: response.data && response.data.data ? response.data.data : []
+                    items: response.data ? response.data : []
                 }));
             })
             .catch(error => {

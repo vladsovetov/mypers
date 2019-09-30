@@ -75,7 +75,7 @@ const ItemSelector = (props) => {
                     </ListItem>
                     <Divider />
                     {items && items[itemType] ? items[itemType].map((item) => {
-                        return <ListItem key={item.id}>
+                        return <ListItem key={item._id}>
                             {item.name}
                         </ListItem>
                     }) : null}
