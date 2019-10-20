@@ -5,7 +5,7 @@ import constants from '../../constants';
 import ItemSelector from '../../containers/ItemSelector/ItemSelector';
 
 const ItemCell = (props) => {
-    const type = props.type || constants.ITEM_TYPE.HIDDEN;
+    const type = props.type || constants.CELL_TYPE.HIDDEN;
     const itemClasses = styles['item-cell'] + ' ' + styles['item-cell-' + type.toLowerCase()];
     const [open, setOpen] = useState(false);
 
